@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="./scripts/main.js"></script>
+    <title>Marcos Guerrero</title>
+  </head>
+  <body>
+    <noscript>
+      <section id="NoScriptMessage">
+        <p class="NoScriptParragraph">you need to enable javascript to continue browsing this site 🤒</p>
+      </section>
+    </noscript>
+    <main>
+      <header>
+        <!-- <input type="checkbox" id="toggleTheme" /> -->
+        <!-- <label for="toggleTheme" class="slider" tabindex="0"></label> -->
+        <div class="slider" role="checkbox" aria-checked="false" tabindex="1"></div>
+        <div class="language-switcher-menu">
+          <button aria-haspopup="lang-menu" id="flag-select-button" aria-controls="lang-menu" tabindex="1">
+            <img id="flag-selected" /><p id="lang-selected"></p>
+          </button>
+          <ul role="menu" id="lang-menu" class="lang-menu" aria-labelledby="flag-select-button">
+            <li role="menuitem" class="lang-item" tabindex="2">
+              <img src="./assets/icons/en_flag.svg" alt="en" draggable="false" /> EN
+            </li>
+            <li role="menuitem" class="lang-item" tabindex="3">
+              <img src="./assets/icons/es_flag.svg" alt="es" draggable="false" /> ES
+            </li>
+          </ul>
+        </div>
+      </header>
+      <section class="home">
+        <p class="typing-container">
+          <span id="feature-text"></span>
+          <span class="caret"></span>
+        </p>
+        <nav class="NavigationMenu">
+          <button class="NavButtons">technologies and languages</button>
+          <button class="NavButtons">experience</button>
+          <button class="NavButtons">contact</button>
+          <button class="NavButtons" onclick="downloadFile()">download cv</button>
+          <!-- <a href="./assets/Marcos Guerrero CV.pdf" download="Marcos Guerrero CV" class="NavButtons">download cv</a> -->
+        </nav>
+      </section>
+      <section class="modal"></section>
+    </main>
+  </body>
+</html>

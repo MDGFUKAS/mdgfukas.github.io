@@ -1,0 +1,169 @@
+@import url('./root.css');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Cabin", sans-serif;
+  margin: 0;
+}
+
+noscript {
+  width: 100%;
+}
+
+#NoScriptMessage {
+  color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: ns 6s infinite;
+}
+
+@keyframes ns {
+  0%, 100% {
+    background-color: #2b2b2b;
+  } 50% {
+    background-color: #050505;
+  }
+}
+
+.NoScriptParragraph {
+  color: red;
+  width: calc(100% - 40px);
+  text-align: center;
+  font-size: 42px;
+}
+
+main {
+  display: none;
+  background-color: var(--MAIN_BG);
+  width: 100%;
+  min-height: 100vh;
+}
+
+.typing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#feature-text {
+  margin-left: 8px;
+  font-size: 4rem;
+  color: var(--MAIN_BLACK);
+}
+
+.caret {
+  display: inline-block;
+  width: 5px;
+  height: 80px;
+  background-color: var(--MAIN_GREEN);
+  margin-left: 8px;
+  animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100vh;
+}
+
+.NavigationMenu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.NavButtons {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid var(--MAIN_GREEN);
+  color: var(--MAIN_BLACK);
+  border-radius: 5px;
+  min-width: 100px;
+  height: 50px;
+  background-color: #0000;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  font-family: 'Cabin', sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.NavButtons:hover {
+  margin-top: -8px;
+  background-color: var(--MAIN_GREEN_TRANS);
+}
+
+.NavButtons:focus {
+  background-color: var(--MAIN_GREEN_TRANS);
+  animation: bump .3s linear;
+}
+
+@keyframes bump {
+  0%, 100% {
+    margin-top: 0;
+  } 50% {
+    margin-top: -8px;
+  }
+}
+
+.NavButtons::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.NavButtons:active::before {
+  animation: expand .2s ease-out;
+}
+
+@keyframes expand {
+  0% {
+    width: 60px;
+    height: 60px;
+    background-color: var(--MAIN_BLACK_TRANS);
+  } 100% {
+    width: 200px;
+    height: 200px;
+    background-color: #0000;
+  }
+}
