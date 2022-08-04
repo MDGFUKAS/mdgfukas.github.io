@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let n = 0; n <= coloseBtn.length - 1; n++) {
     coloseBtn[n].addEventListener('click', () => closeModal(overlay[n]));
   }
+
+  navBtns[4].addEventListener('click', () => downloadCV())
 })
 
 function openModal (elem, keyCode) {
@@ -20,7 +22,7 @@ function closeModal (elem, keyCode) {
   elem.style.display = "none"
 }
 
-function downloadCV() {
+function downloadCV(keyCode) {
   const url = '../assets/files/Marcos_Guerrero_CV.pdf';
   const link = document.createElement('a');
   link.href = url;
