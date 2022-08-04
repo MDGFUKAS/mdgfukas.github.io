@@ -3,15 +3,8 @@ import eslng from './langs/es.json' assert { type: 'json'}
 
 console.log(JSON.parse(JSON.stringify(eslng)))
 
-const es = {
-  GREETINGS: ['Hola Mundo!', 'Soy Marcos Guerrero', 'Desarrollador Front End', 'Desarrollador Movil'],
-  BUTTONS: ['About Me', 'Tecnologías && lenguajes', 'Experiencia', 'Contacto', 'Descargar CV']
-};
-
-const en = {
-  GREETINGS: ['Hello World!', "I'm Marcos Guerrero", 'Front End Developer', 'Mobile Developer'],
-  BUTTONS: ['About Me', 'Technologies && languages', 'Experience', 'Contact', 'Download CV']
-};
+const es = JSON.parse(JSON.stringify(eslng));
+const en = JSON.parse(JSON.stringify(enlng));
 
 const getLang =
   localStorage.getItem('language') === 'es' || navigator?.languages[0] === 'es' || navigator.language === 'es'
@@ -33,7 +26,6 @@ const carouselText = [
 
 document.addEventListener('DOMContentLoaded', async function () {
 
-  const dataTheme = document.documentElement.getAttribute('data-theme')
   const main = document.getElementsByTagName('main')[0];
   main.style.display = 'block';
 
@@ -43,14 +35,25 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   // check the browser color-scheme
   const el = document.getElementsByClassName('slider')[0];
+  const hero = document.getElementById('hero');
+  const closeBtn = document.getElementsByClassName('close');
 
   if (!localStorage.theme) {
     if (window && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.documentElement.setAttribute('data-theme', 'dark');
       el.setAttribute('aria-checked', 'true');
+      localStorage.theme = 'dark'
+      hero.src = '../assets/images/avatar_dark.svg';
+      for (let i = 0; i <= closeBtn.length -1; i++) {
+        closeBtn[i].firstElementChild.setAttribute('src', '../assets/icons/close_icon_dark.svg');
+      }
     }
   } else {
     document.documentElement.setAttribute('data-theme', localStorage.theme);
+    hero.src = `../assets/images/avatar_${localStorage.theme === 'dark' ? 'dark' : 'light'}.svg`;
+    for (let i = 0; i <= closeBtn.length -1; i++) {
+      closeBtn[i].firstElementChild.setAttribute('src', `../assets/icons/close_icon_${localStorage.theme === 'dark' ? 'dark' : 'light'}.svg`);
+    }
     el.setAttribute('aria-checked', String(localStorage.theme === 'dark'));
   }
 
@@ -73,6 +76,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       el.setAttribute('aria-checked', 'true');
       document.documentElement.setAttribute('data-theme', 'dark');
       localStorage.theme = 'dark';
+    }
+
+    const dataTheme = document.documentElement.getAttribute('data-theme')
+
+    hero.src = `../assets/images/avatar_${dataTheme === 'dark' ? 'dark' : 'light'}.svg`
+    for (let i = 0; i <= closeBtn.length -1; i++) {
+      closeBtn[i].firstElementChild.setAttribute('src', `../assets/icons/close_icon_${dataTheme === 'dark' ? 'dark' : 'light'}.svg`);
     }
   }
 
@@ -122,6 +132,17 @@ document.addEventListener('DOMContentLoaded', async function () {
       window.location.reload();
     }
   }
+
+  const navBtns = document.getElementsByClassName('NavButtons')
+  for (let i = 0; i <= navBtns.length -1; i++) {
+    navBtns[i].innerText = lang.BUTTONS[i];
+  }
+
+  const aboutMe = document.getElementById('about-me')
+  aboutMe.innerHTML = lang.ABOUT_ME;
+
+  const techTitle = document.getElementById('tech-title');
+  techTitle.innerText = lang.TECHNOLOGIES;
 
   const fText = document.getElementById('feature-text');
   carousel(carouselText, fText);

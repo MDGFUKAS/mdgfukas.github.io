@@ -13,6 +13,7 @@
   position: relative;
   box-sizing: border-box;
   padding: 10px;
+  /* z-index: 10; */
 }
 
 .overlay {
@@ -26,16 +27,36 @@
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .close {
-  width: 25px;
-  height: 25px;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: #0000;
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 0;
   right: 0;
   margin-top: 15px;
   margin-right: 15px;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close img {
+  width: 25px;
+  height: 25px;
+}
+
+.close:focus {
+  outline: 2px solid var(--MAIN_GREEN);
+  border-radius: 4px;
 }
 
 .about-modal {
@@ -47,4 +68,52 @@
 
 #hero {
   width: 150px;
+}
+
+#about-me {
+  width: calc(100% - 20px);
+  text-align: center;
+  font-family: 1.2rem;
+  color: var(--MAIN_BLACK);
+  margin-top: 20px;
+}
+
+#about-me a {
+  color: #f60;
+}
+
+.tech-content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  color: var(--MAIN_BLACK);
+}
+
+.tech-stack {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  margin-top: 15px;
+}
+
+.stack-fig {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.stack-fig img {
+  width: 90px;
+}
+
+.stack-fig figcaption {
+  font-style: italic;
+  margin-top: 10px;
 }

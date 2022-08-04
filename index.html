@@ -26,15 +26,15 @@
         <!-- <label for="toggleTheme" class="slider" tabindex="0"></label> -->
         <div class="slider" role="checkbox" aria-checked="false" tabindex="1"></div>
         <div class="language-switcher-menu">
-          <button aria-haspopup="lang-menu" id="flag-select-button" aria-controls="lang-menu" tabindex="1">
+          <button aria-haspopup="menu" id="flag-select-button" aria-controls="lang-menu" tabindex="1">
             <img id="flag-selected" />
             <p id="lang-selected"></p>
           </button>
           <ul role="menu" id="lang-menu" class="lang-menu" aria-labelledby="flag-select-button">
-            <li role="menuitem" class="lang-item" tabindex="2">
+            <li role="menuitem" class="lang-item" tabindex="1">
               <img src="./assets/icons/en_flag.svg" alt="en" draggable="false" /> EN
             </li>
-            <li role="menuitem" class="lang-item" tabindex="3">
+            <li role="menuitem" class="lang-item" tabindex="1">
               <img src="./assets/icons/es_flag.svg" alt="es" draggable="false" /> ES
             </li>
           </ul>
@@ -46,47 +46,66 @@
           <span class="caret"></span>
         </h1>
         <nav class="NavigationMenu">
-          <button class="NavButtons">about me</button>
-          <button class="NavButtons">technologies and languages</button>
-          <button class="NavButtons">experience</button>
-          <button class="NavButtons">contact</button>
+          <button aria-haspopup="dialog" class="NavButtons" id="NavBtn1" aria-controls="about-modal">about me</button>
+          <div class="overlay" id="about-modal" role="dialog" aria-labelledby="NavBtn1">
+            <section class="modal about-modal">
+              <button class="close">
+                <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" role="button" />
+              </button>
+              <img src="./assets/images/avatar_light.svg" id="hero" draggable="false" />
+              <article id="about-me"></article>
+            </section>
+          </div>
+          <button class="NavButtons" aria-haspopup="dialog" id="NabBtn2" aria-controls="tech-modal">technologies and languages</button>
+          <div class="overlay" id="tech-modal" role="dialog" aria-labelledby="NavBtn2">
+            <section class="modal tech-modal">
+              <button class="close">
+                <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
+              </button>
+              <article class="tech-content">
+                <h2 class="modals-title" id="tech-title"></h2>
+                <section class="tech-stack">
+                  <figure class="stack-fig">
+                    <img src="./assets/icons/java_script_logo.svg" alt="JavaScript_logo" />
+                    <figcaption>JavaScript</figcaption>
+                  </figure>
+                  <figure class="stack-fig">
+                    <img src="./assets/icons/react_js_native_logo.svg" alt="JavaScript_logo" />
+                    <figcaption>React / Native</figcaption>
+                  </figure>
+                  <figure class="stack-fig">
+                    <img src="./assets/icons/redux_logo.svg" alt="JavaScript_logo" />
+                    <figcaption>Redux</figcaption>
+                  </figure>
+                  <figure class="stack-fig">
+                    <img src="./assets/icons/node_js_logo.svg" alt="JavaScript_logo" />
+                    <figcaption>Node.js</figcaption>
+                  </figure>
+                </section>
+              </article>
+            </section>
+          </div>
+          <button class="NavButtons" id="NabBtn3">experience</button>
+          <button class="NavButtons" id="NabBtn4">contact</button>
           <button class="NavButtons" onclick="downloadCV()">download cv</button>
           <!-- <a href="./assets/Marcos Guerrero CV.pdf" download="Marcos Guerrero CV" class="NavButtons">download cv</a> -->
         </nav>
       </section>
       <div class="overlay">
-        <section class="modal about-modal">
-          <img class="close" alt="close" draggable="false" />
-          <article class="about-me">
-            <img id="hero" draggable="false" />
-            <article id="about-me"></article>
-          </article>
-        </section>
-      </div>
-      <div class="overlay">
-        <section class="modal tech-modal">
-          <img class="close" alt="close" draggable="false" />
-          <article class="about-me">
-            <img id="hero" />
-            <article id="about-me"></article>
-          </article>
-        </section>
-      </div>
-      <div class="overlay">
         <section class="modal exp-modal">
-          <img class="close" alt="close" draggable="false" />
+          <button class="close">
+            <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
+          </button>
           <article class="about-me">
-            <img id="hero" />
-            <article id="about-me"></article>
           </article>
         </section>
       </div>
       <div class="overlay">
         <section class="modal contact-modal">
-          <img class="close" alt="close" draggable="false" />
+          <button class="close">
+            <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
+          </button>
           <article class="about-me">
-            <img id="hero" />
-            <article id="about-me"></article>
           </article>
         </section>
       </div>
