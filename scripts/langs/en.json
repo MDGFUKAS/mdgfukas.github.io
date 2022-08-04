@@ -1,6 +1,0 @@
-{
-  "GREETINGS": ["Hello World!", "I'm Marcos Guerrero", "Front End Developer", "Mobile Developer"],
-  "BUTTONS": ["About Me", "Technologies && languages", "Experience", "Contact", "Download CV"],
-  "ABOUT_ME": "Hello! I am Marcos, a self-taught and quite dedicated developer with +2 years of experience, I am focused on developing web and mobile applications with javascript, I am currently working at <a href='https://www.linkedin.com/company/neurons-agency/' rel='noopener noreferer' target='_blank'>@neurons_agency</a> as a mid-senior Front-end developer with react and javascript",
-  "TECHNOLOGIES": "Technologies && languages"
-}

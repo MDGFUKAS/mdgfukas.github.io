@@ -1,10 +1,16 @@
-import enlng from './langs/en.json' assert { type: 'json'}
-import eslng from './langs/es.json' assert { type: 'json'}
+const en = {
+  GREETINGS: ["Hello World!", "I'm Marcos Guerrero", "Front End Developer", "Mobile Developer"],
+  BUTTONS: ["About Me", "Technologies && languages", "Experience", "Contact", "Download CV"],
+  ABOUT_ME: "Hello! I am Marcos, a self-taught and quite dedicated developer with +2 years of experience, I am focused on developing web and mobile applications with javascript, I am currently working at <a href='https://www.linkedin.com/company/neurons-agency/' rel='noopener noreferer' target='_blank'>@neurons_agency</a> as a mid-senior Front-end developer with react and javascript",
+  TECHNOLOGIES: "Technologies && languages"
+}
 
-console.log(JSON.parse(JSON.stringify(eslng)))
-
-const es = JSON.parse(JSON.stringify(eslng));
-const en = JSON.parse(JSON.stringify(enlng));
+const es = {
+  GREETINGS: ["Hola Mundo!", "Soy Marcos Guerrero", "Desarrollador Front End", "Desarrollador Movil"],
+  BUTTONS: ["About Me", "Tecnologías && lenguajes", "Experiencia", "Contacto", "Descargar CV"],
+  ABOUT_ME: "¡Hola! Soy Marcos, un desarrollador autodidacta y bastante dedicado cuento con +2 años de experiencia, estoy enfocado en desarrollar aplicaciones web y moviles con javascript, actualmente me encuentro trabajando en <a href='https://www.linkedin.com/company/neurons-agency/' rel='noopener noreferer' target='_blank'>@neurons_agency</a> como desarrollador Front-end semi-senior con react y javascript",
+  TECHNOLOGIES: "Technologías && lenguages"
+}
 
 const getLang =
   localStorage.getItem('language') === 'es' || navigator?.languages[0] === 'es' || navigator.language === 'es'
