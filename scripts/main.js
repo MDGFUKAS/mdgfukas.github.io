@@ -1,3 +1,8 @@
+import enlng from './langs/en.json' assert { type: 'json'}
+import eslng from './langs/es.json' assert { type: 'json'}
+
+console.log(JSON.parse(JSON.stringify(eslng)))
+
 const es = {
   GREETINGS: ['Hola Mundo!', 'Soy Marcos Guerrero', 'Desarrollador Front End', 'Desarrollador Movil'],
   BUTTONS: ['About Me', 'Tecnologías && lenguajes', 'Experiencia', 'Contacto', 'Descargar CV']
@@ -27,6 +32,8 @@ const carouselText = [
 // https://medium.com/front-end-weekly/how-to-create-typing-effect-in-css-and-js-3252dd807f0a
 
 document.addEventListener('DOMContentLoaded', async function () {
+
+  const dataTheme = document.documentElement.getAttribute('data-theme')
   const main = document.getElementsByTagName('main')[0];
   main.style.display = 'block';
 
@@ -119,16 +126,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   const fText = document.getElementById('feature-text');
   carousel(carouselText, fText);
 });
-
-function downloadFile() {
-  const url = '../assets/files/Marcos_Guerrero_CV.pdf';
-  const link = document.createElement('a');
-  link.href = url;
-  link.setAttribute('download', 'Marcos Guerrero CV.pdf');
-  document.body.appendChild(link);
-  link.click();
-  link.parentNode.removeChild(link);
-}
 
 async function typeSentence(sentence, eleRef, delay = 100) {
   const letters = sentence.split('');
