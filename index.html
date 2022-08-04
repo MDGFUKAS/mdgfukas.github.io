@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet" />
-    <script src="./scripts/main.js" ></script>
-    <script src="./scripts/actions.js" ></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/actions.js"></script>
     <title>Marcos Guerrero</title>
   </head>
   <body>
@@ -56,7 +56,9 @@
               <article id="about-me"></article>
             </section>
           </div>
-          <button class="NavButtons" aria-haspopup="dialog" id="NabBtn2" aria-controls="tech-modal">technologies and languages</button>
+          <button class="NavButtons" aria-haspopup="dialog" id="NabBtn2" aria-controls="tech-modal">
+            technologies and languages
+          </button>
           <div class="overlay" id="tech-modal" role="dialog" aria-labelledby="NavBtn2">
             <section class="modal tech-modal">
               <button class="close">
@@ -85,30 +87,83 @@
               </article>
             </section>
           </div>
-          <button class="NavButtons" id="NabBtn3">experience</button>
+          <button class="NavButtons" id="NabBtn3" aria-haspopup="exp-modal">experience</button>
+          <div class="overlay">
+            <section class="modal" id="exp-modal" role="dialog" aria-labelledby="NavBtn3">
+              <button class="close">
+                <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
+              </button>
+              <h2 class="modals-title" id="tech-title"></h2>
+              <article class="experience-content">
+                <figure class="exp-fig">
+                  <a href="https://neurons.agency" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/neurons_logo.svg" draggable="false" />
+                    <p class="work-role"></p>
+                  </a>
+                </figure>
+                <figure class="exp-fig">
+                  <a href="https://zpikonline.com" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/zpikonline_logo.svg" draggable="false" />
+                    <p class="work-role"></p>
+                  </a>
+                </figure>
+                <figure class="exp-fig">
+                  <a href="https://axievenezuela-b1de5.firebaseapp.com" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/axie_logo.svg" draggable="false" />
+                    <p class="work-role"></p>
+                  </a>
+                </figure>
+                <figure class="exp-fig">
+                  <a href="https://mayordiesel.com" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/mayor_diesel_logo.svg" draggable="false" />
+                    <p class="work-role"></p>
+                  </a>
+                </figure>
+                <figure class="exp-fig">
+                  <a href="https://pes-tab.com" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/pes_logo.svg" draggable="false" />
+                    <p class="work-role"></p>
+                  </a>
+                </figure>
+              </article>
+            </section>
+          </div>
           <button class="NavButtons" id="NabBtn4">contact</button>
+          <div class="overlay">
+            <section class="modal contact-modal">
+              <section class="contact_form" aria-expanded="true">
+                <div class="input_area">
+                  <label for="contact_name"></label>
+                  <input type="text" name="name" id="contact_name" class="contact_input" />
+                </div>
+                <div class="input_area">
+                  <label for="contact_email"></label>
+                  <input type="email" name="email" id="contact_email" class="contact_input" />
+                </div>
+                <div class="input_area">
+                  <label for="contact_message"></label>
+                  <textarea type="text" name="message" id="contact_message" class="contact_textarea"></textarea>
+                </div>
+                <button class="send_button"></button>
+                <button class="swap_button"></button>
+              </section>
+              <section class="contact_ws">
+                <div>
+                  <label for="ws_contant_message"></label>
+                  <div><input type="text" name="ws_message" id="ws_contact_message" />
+                  <button></button></div>
+                </div>
+                <button class="swap_button"></button>
+              </section>
+              <button class="close">
+                <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
+              </button>
+            </section>
+          </div>
           <button class="NavButtons">download cv</button>
           <!-- <a href="./assets/Marcos Guerrero CV.pdf" download="Marcos Guerrero CV" class="NavButtons">download cv</a> -->
         </nav>
       </section>
-      <div class="overlay">
-        <section class="modal exp-modal">
-          <button class="close">
-            <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
-          </button>
-          <article class="about-me">
-          </article>
-        </section>
-      </div>
-      <div class="overlay">
-        <section class="modal contact-modal">
-          <button class="close">
-            <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
-          </button>
-          <article class="about-me">
-          </article>
-        </section>
-      </div>
     </main>
   </body>
 </html>

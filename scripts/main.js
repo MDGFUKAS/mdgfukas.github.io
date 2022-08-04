@@ -2,14 +2,14 @@ const en = {
   GREETINGS: ["Hello World!", "I'm Marcos Guerrero", "Front End Developer", "Mobile Developer"],
   BUTTONS: ["About Me", "Technologies && languages", "Experience", "Contact", "Download CV"],
   ABOUT_ME: "Hello! I am Marcos, a self-taught and quite dedicated developer with +2 years of experience, I am focused on developing web and mobile applications with javascript, I am currently working at <a href='https://www.linkedin.com/company/neurons-agency/' rel='noopener noreferer' target='_blank'>@neurons_agency</a> as a mid-senior Front-end developer with react and javascript",
-  TECHNOLOGIES: "Technologies && languages"
+  ROLE: "Front-end Developer"
 }
 
 const es = {
   GREETINGS: ["Hola Mundo!", "Soy Marcos Guerrero", "Desarrollador Front End", "Desarrollador Movil"],
   BUTTONS: ["About Me", "Tecnologías && lenguajes", "Experiencia", "Contacto", "Descargar CV"],
   ABOUT_ME: "¡Hola! Soy Marcos, un desarrollador autodidacta y bastante dedicado cuento con +2 años de experiencia, estoy enfocado en desarrollar aplicaciones web y moviles con javascript, actualmente me encuentro trabajando en <a href='https://www.linkedin.com/company/neurons-agency/' rel='noopener noreferer' target='_blank'>@neurons_agency</a> como desarrollador Front-end semi-senior con react y javascript",
-  TECHNOLOGIES: "Technologías && lenguages"
+  ROLE: "Desarrollador Front-end"
 }
 
 const getLang =
@@ -147,8 +147,14 @@ document.addEventListener('DOMContentLoaded', async function () {
   const aboutMe = document.getElementById('about-me')
   aboutMe.innerHTML = lang.ABOUT_ME;
 
-  const techTitle = document.getElementById('tech-title');
-  techTitle.innerText = lang.TECHNOLOGIES;
+  const techTitle = document.getElementsByClassName('modals-title');
+  techTitle[0].innerText = lang.BUTTONS[1];
+  techTitle[1].innerText = lang.BUTTONS[2];
+
+  const workRole = document.getElementsByClassName('work-role');
+  for (let i = 0; i <= workRole.length -1; i++) {
+    workRole[i].innerText = lang.ROLE;
+  }
 
   const fText = document.getElementById('feature-text');
   carousel(carouselText, fText);

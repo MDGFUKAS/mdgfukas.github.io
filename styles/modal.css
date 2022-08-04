@@ -82,6 +82,12 @@
   color: #f60;
 }
 
+.modals-title {
+  width: 100%;
+  text-align: center;
+  color: var(--MAIN_BLACK);
+}
+
 .tech-content {
   display: flex;
   width: 100%;
@@ -116,4 +122,100 @@
 .stack-fig figcaption {
   font-style: italic;
   margin-top: 10px;
+}
+
+#exp-modal {
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.experience-content {
+  overflow: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.exp-fig {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin: 10px;
+}
+
+.exp-fig a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  text-decoration: none;
+  color: var(--MAIN_BLACK);
+}
+
+.exp-fig a img {
+  width: 100%;
+}
+
+.contact_form, .contact_ws {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  position: relative;
+  width: 100%;
+}
+
+.input_area {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  margin: 5px;
+}
+
+.contact_input, .contact_textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  border: 2px solid var(--MAIN_GREEN);
+  color: var(--MAIN_GREEN);
+  border-radius: 8px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-family: 'Cabin', sans-serif;
+  background-color: var(--MAIN_BG);
+}
+
+.contact_input:-webkit-autofill,
+.contact_input:-webkit-autofill:hover, 
+.contact_input:-webkit-autofill:focus, 
+.contact_input:-webkit-autofill:active,
+.contact_textarea:-webkit-autofill,
+.contact_textarea:-webkit-autofill:hover, 
+.contact_textarea:-webkit-autofill:focus, 
+.contact_textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--MAIN_BG) inset !important;
+  box-shadow: 0 0 0 30px var(--MAIN_BG) inset !important;
+  font-size: 1.1rem;
+  font-family: 'Cabin', sans-serif !important;
+  -webkit-text-fill-color: var(--MAIN_GREEN) !important;
+  color: var(--MAIN_GREEN) !important;
+}
+
+.contact_textarea {
+  height: 200px;
+}
+
+.contact_form[aria-expanded="true"], .contact_ws[aria-expanded="true"] {
+  display: flex;
 }
