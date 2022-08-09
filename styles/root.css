@@ -4,6 +4,8 @@
   --MAIN_BG: #D8DBEE;
   --MAIN_BLACK: #191C2F;
   --MAIN_BLACK_TRANS: #191C2F66;
+  --WS_IMG: url('../assets/icons/whatsapp_light_logo.svg');
+  --MS_IMG: url('../assets/icons/message_light_logo.svg');
 }
 [data-theme='dark'] {
   --MAIN_GREEN: #37A71F;
@@ -11,4 +13,6 @@
   --MAIN_BG: #191C2F;
   --MAIN_BLACK: #E8E8E8;
   --MAIN_BLACK_TRANS: #F2F4FF66;
+  --WS_IMG: url('../assets/icons/whatsapp_dark_logo.svg');
+  --MS_IMG: url('../assets/icons/message_dark_logo.svg');
 }

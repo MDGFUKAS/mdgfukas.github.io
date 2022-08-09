@@ -1,16 +1,32 @@
 const en = {
-  GREETINGS: ["Hello World!", "I'm Marcos Guerrero", "Front End Developer", "Mobile Developer"],
-  BUTTONS: ["About Me", "Technologies && languages", "Experience", "Contact", "Download CV"],
-  ABOUT_ME: "Hello! I am Marcos, a self-taught and quite dedicated developer with +2 years of experience, I am focused on developing web and mobile applications with javascript, I am currently working at <a href='https://www.linkedin.com/company/neurons-agency/' rel='noopener noreferer' target='_blank'>@neurons_agency</a> as a mid-senior Front-end developer with react and javascript",
-  ROLE: "Front-end Developer"
-}
+  GREETINGS: ['Hello World!', "I'm Marcos Guerrero", 'Front End Developer', 'Mobile Developer'],
+  BUTTONS: ['About Me', 'Technologies && languages', 'Experience', 'Contact', 'Download CV'],
+  ABOUT_ME:
+    "Hello! I am Marcos, a self-taught and quite dedicated developer with +2 years of experience, I am focused on developing web and mobile applications with javascript, I am currently working at <a href='https://www.linkedin.com/company/neurons-agency/' rel='noopener noreferer' target='_blank'>@neurons_agency</a> as a mid-senior Front-end developer with react and javascript",
+  ROLE: 'Front-end Developer',
+  CONTACT_ME: {
+    labels: ['Your Name', 'Email', 'Why do you contact me?'],
+    send: 'Send',
+    subject: 'Hi! I need comunication with you.',
+    message: (name, email, message) =>
+      `Hello Marcos! \n\n${name} contact you from ${email} \n\nAnd says the following${message || '(No body message)'}`,
+  },
+};
 
 const es = {
-  GREETINGS: ["Hola Mundo!", "Soy Marcos Guerrero", "Desarrollador Front End", "Desarrollador Movil"],
-  BUTTONS: ["About Me", "Tecnologías && lenguajes", "Experiencia", "Contacto", "Descargar CV"],
-  ABOUT_ME: "¡Hola! Soy Marcos, un desarrollador autodidacta y bastante dedicado cuento con +2 años de experiencia, estoy enfocado en desarrollar aplicaciones web y moviles con javascript, actualmente me encuentro trabajando en <a href='https://www.linkedin.com/company/neurons-agency/' rel='noopener noreferer' target='_blank'>@neurons_agency</a> como desarrollador Front-end semi-senior con react y javascript",
-  ROLE: "Desarrollador Front-end"
-}
+  GREETINGS: ['Hola Mundo!', 'Soy Marcos Guerrero', 'Desarrollador Front End', 'Desarrollador Movil'],
+  BUTTONS: ['About Me', 'Tecnologías && lenguajes', 'Experiencia', 'Contacto', 'Descargar CV'],
+  ABOUT_ME:
+    "¡Hola! Soy Marcos, un desarrollador autodidacta y bastante dedicado cuento con +2 años de experiencia, estoy enfocado en desarrollar aplicaciones web y moviles con javascript, actualmente me encuentro trabajando en <a href='https://www.linkedin.com/company/neurons-agency/' rel='noopener noreferer' target='_blank'>@neurons_agency</a> como desarrollador Front-end semi-senior con react y javascript",
+  ROLE: 'Desarrollador Front-end',
+  CONTACT_ME: {
+    labels: ['Tu Nombre', 'Correo', '¿Por que me contactas?'],
+    send: 'Enviar',
+    subject: '¡Hola! Necesito comunicarme contigo.',
+    message: (name, email, message) =>
+      `Hola Marcos! \n\n${name} te contacta desde ${email} \n\ny dice lo siguiente${message || '(Mensaje sin cuerpo)'}`,
+  },
+};
 
 const getLang =
   localStorage.getItem('language') === 'es' || navigator?.languages[0] === 'es' || navigator.language === 'es'
@@ -31,7 +47,6 @@ const carouselText = [
 // https://medium.com/front-end-weekly/how-to-create-typing-effect-in-css-and-js-3252dd807f0a
 
 document.addEventListener('DOMContentLoaded', async function () {
-
   const main = document.getElementsByTagName('main')[0];
   main.style.display = 'block';
 
@@ -48,17 +63,20 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (window && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.documentElement.setAttribute('data-theme', 'dark');
       el.setAttribute('aria-checked', 'true');
-      localStorage.theme = 'dark'
+      localStorage.theme = 'dark';
       hero.src = '../assets/images/avatar_dark.svg';
-      for (let i = 0; i <= closeBtn.length -1; i++) {
+      for (let i = 0; i <= closeBtn.length - 1; i++) {
         closeBtn[i].firstElementChild.setAttribute('src', '../assets/icons/close_icon_dark.svg');
       }
     }
   } else {
     document.documentElement.setAttribute('data-theme', localStorage.theme);
     hero.src = `../assets/images/avatar_${localStorage.theme === 'dark' ? 'dark' : 'light'}.svg`;
-    for (let i = 0; i <= closeBtn.length -1; i++) {
-      closeBtn[i].firstElementChild.setAttribute('src', `../assets/icons/close_icon_${localStorage.theme === 'dark' ? 'dark' : 'light'}.svg`);
+    for (let i = 0; i <= closeBtn.length - 1; i++) {
+      closeBtn[i].firstElementChild.setAttribute(
+        'src',
+        `../assets/icons/close_icon_${localStorage.theme === 'dark' ? 'dark' : 'light'}.svg`
+      );
     }
     el.setAttribute('aria-checked', String(localStorage.theme === 'dark'));
   }
@@ -84,11 +102,14 @@ document.addEventListener('DOMContentLoaded', async function () {
       localStorage.theme = 'dark';
     }
 
-    const dataTheme = document.documentElement.getAttribute('data-theme')
+    const dataTheme = document.documentElement.getAttribute('data-theme');
 
-    hero.src = `../assets/images/avatar_${dataTheme === 'dark' ? 'dark' : 'light'}.svg`
-    for (let i = 0; i <= closeBtn.length -1; i++) {
-      closeBtn[i].firstElementChild.setAttribute('src', `../assets/icons/close_icon_${dataTheme === 'dark' ? 'dark' : 'light'}.svg`);
+    hero.src = `../assets/images/avatar_${dataTheme === 'dark' ? 'dark' : 'light'}.svg`;
+    for (let i = 0; i <= closeBtn.length - 1; i++) {
+      closeBtn[i].firstElementChild.setAttribute(
+        'src',
+        `../assets/icons/close_icon_${dataTheme === 'dark' ? 'dark' : 'light'}.svg`
+      );
     }
   }
 
@@ -139,12 +160,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   }
 
-  const navBtns = document.getElementsByClassName('NavButtons')
-  for (let i = 0; i <= navBtns.length -1; i++) {
+  const navBtns = document.getElementsByClassName('NavButtons');
+  for (let i = 0; i <= navBtns.length - 1; i++) {
     navBtns[i].innerText = lang.BUTTONS[i];
   }
 
-  const aboutMe = document.getElementById('about-me')
+  const aboutMe = document.getElementById('about-me');
   aboutMe.innerHTML = lang.ABOUT_ME;
 
   const techTitle = document.getElementsByClassName('modals-title');
@@ -152,8 +173,54 @@ document.addEventListener('DOMContentLoaded', async function () {
   techTitle[1].innerText = lang.BUTTONS[2];
 
   const workRole = document.getElementsByClassName('work-role');
-  for (let i = 0; i <= workRole.length -1; i++) {
+  for (let i = 0; i <= workRole.length - 1; i++) {
     workRole[i].innerText = lang.ROLE;
+  }
+
+  // const swap = document.getElementsByClassName('swap_button');
+  // swap[0].addEventListener('click', () => {
+  //   document.getElementsByClassName('contact_form')[0].removeAttribute('aria-expanded')
+  //   document.getElementsByClassName('contact_ws')[0].setAttribute('aria-expanded', 'true')
+  // })
+  // swap[1].addEventListener('click', () => {
+  //   document.getElementsByClassName('contact_ws')[0].removeAttribute('aria-expanded')
+  //   document.getElementsByClassName('contact_form')[0].setAttribute('aria-expanded', 'true')
+  // })
+
+  const msgLabel = document.getElementsByClassName('message_label');
+  for (let i = 0; i <= msgLabel.length - 1; i++) {
+    msgLabel[i].innerText = lang.CONTACT_ME.labels[i];
+  }
+
+  const sendBtn = document.getElementsByClassName('send_button');
+  sendBtn[0].innerText = lang.CONTACT_ME.send;
+
+  sendBtn[0].addEventListener('click', sendEmail)
+
+  function sendEmail () {
+    const name = document.getElementById('contact_name').value;
+    const email = document.getElementById('contact_email').value;
+    const message = document.getElementById('contact_message').value;
+
+    if (name && email) {
+      const formatedMessage = lang.CONTACT_ME.message(name, email, message);
+      sendEmailFinale(formatedMessage)
+    } else {
+      alert('missing fields')
+    }
+  };
+
+  function sendEmailFinale(message) {
+    const myEmail = 'mguerrerofinol';
+    const subject = '';
+    let url = `mailto:${myEmail}@gmail.com?cc=${''}&subject=${subject}&body=${message}`;
+    const link = document.createElement('a');
+    link.href = url;
+    // link.setAttribute('target', '_blank');
+    // link.setAttribute('rel', 'noopener noreferrer');
+    document.body.appendChild(link);
+    link.click()
+    link.parentNode.removeChild(link)
   }
 
   const fText = document.getElementById('feature-text');

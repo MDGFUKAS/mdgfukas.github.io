@@ -133,28 +133,27 @@
             <section class="modal contact-modal">
               <section class="contact_form" aria-expanded="true">
                 <div class="input_area">
-                  <label for="contact_name"></label>
-                  <input type="text" name="name" id="contact_name" class="contact_input" />
+                  <label for="contact_name" class="message_label" >Your Name</label>
+                  <input type="text" name="name" id="contact_name" class="contact_input" placeholder="John Doe" />
                 </div>
                 <div class="input_area">
-                  <label for="contact_email"></label>
-                  <input type="email" name="email" id="contact_email" class="contact_input" />
+                  <label for="contact_email" class="message_label" >Email</label>
+                  <input type="email" name="email" id="contact_email" class="contact_input" placeholder="example555@gmail.com" />
                 </div>
                 <div class="input_area">
-                  <label for="contact_message"></label>
-                  <textarea type="text" name="message" id="contact_message" class="contact_textarea"></textarea>
+                  <label for="contact_message" class="message_label" >Why do you contact me?</label>
+                  <textarea type="text" name="message" id="contact_message" class="contact_textarea" placeholder="..."></textarea>
                 </div>
-                <button class="send_button"></button>
-                <button class="swap_button"></button>
+                <button class="send_button">enviar</button>
+                <!-- <button class="swap_button ws_button" data-message="or write me on whatsapp 👉"></button> -->
               </section>
-              <section class="contact_ws">
+              <!-- <section class="contact_ws">
                 <div>
                   <label for="ws_contant_message"></label>
-                  <div><input type="text" name="ws_message" id="ws_contact_message" />
-                  <button></button></div>
+                  <div><textarea type="text" name="ws_message" id="ws_contact_message"></textarea><button></button></div>
                 </div>
-                <button class="swap_button"></button>
-              </section>
+                <button class="swap_button msg_button" data-message="or send me a message 👉"></button>
+              </section> -->
               <button class="close">
                 <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
               </button>
