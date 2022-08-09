@@ -9,7 +9,7 @@ const en = {
     send: 'Send',
     subject: 'Hi! I need comunication with you.',
     message: (name, email, message) =>
-      `Hello Marcos! \n\n${name} contact you from ${email} \n\nAnd says the following${message || '(No body message)'}`,
+      `Hello Marcos! \n\n${name} contact you from ${email} \n\nAnd says the following: \n${message || '(No body message)'}`,
   },
 };
 
@@ -24,7 +24,7 @@ const es = {
     send: 'Enviar',
     subject: '¡Hola! Necesito comunicarme contigo.',
     message: (name, email, message) =>
-      `Hola Marcos! \n\n${name} te contacta desde ${email} \n\ny dice lo siguiente${message || '(Mensaje sin cuerpo)'}`,
+      `Hola Marcos! \n\n${name} te contacta desde ${email} \n\ny dice lo siguiente: \n${message || '(Mensaje sin cuerpo)'}`,
   },
 };
 
@@ -216,8 +216,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     let url = `mailto:${myEmail}@gmail.com?cc=${''}&subject=${subject}&body=${message}`;
     const link = document.createElement('a');
     link.href = url;
-    // link.setAttribute('target', '_blank');
-    // link.setAttribute('rel', 'noopener noreferrer');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
     document.body.appendChild(link);
     link.click()
     link.parentNode.removeChild(link)
