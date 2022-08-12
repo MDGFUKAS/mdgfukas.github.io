@@ -168,3 +168,90 @@ main {
     background-color: #0000;
   }
 }
+
+@media (max-width: 770px) {
+  
+  #feature-text {
+    margin-left: 8px;
+    font-size: 3rem;
+    color: var(--MAIN_BLACK);
+  }
+  
+  .caret {
+    display: inline-block;
+    width: 5px;
+    height: 60px;
+    margin-left: 6px;
+  }
+
+  .NavigationMenu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    z-index: 0;
+  }
+  
+  .NavButtons {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid var(--MAIN_GREEN);
+    color: var(--MAIN_BLACK);
+    border-radius: 5px;
+    min-width: 150px;
+    animation: none;
+    width: 200px;
+  }
+
+  .NavButtons:hover, .NavButtons:focus{
+    margin: 5px;
+    animation: unset;
+  }
+  
+}
+
+@media (max-width: 540px) {
+  
+  #feature-text {
+    margin-left: 8px;
+    font-size: 1.8rem;
+    color: var(--MAIN_BLACK);
+  }
+  
+  .caret {
+    display: inline-block;
+    width: 5px;
+    height: 60px;
+    margin-left: 6px;
+  }
+
+  .NavigationMenu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    z-index: 0;
+  }
+  
+  .NavButtons {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid var(--MAIN_GREEN);
+    color: var(--MAIN_BLACK);
+    border-radius: 5px;
+    min-width: 150px;
+    animation: none;
+    width: 200px;
+  }
+
+  .NavButtons:hover, .NavButtons:focus{
+    margin: 5px;
+    animation: unset;
+  }
+  
+}
+

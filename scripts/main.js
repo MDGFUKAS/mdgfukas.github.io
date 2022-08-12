@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       for (let i = 0; i <= closeBtn.length - 1; i++) {
         closeBtn[i].firstElementChild.setAttribute('src', '../assets/icons/close_icon_dark.svg');
       }
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#37A71F');
     }
   } else {
     document.documentElement.setAttribute('data-theme', localStorage.theme);
@@ -78,6 +79,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         `../assets/icons/close_icon_${localStorage.theme === 'dark' ? 'dark' : 'light'}.svg`
       );
     }
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', `${localStorage.theme === 'dark' ? '#37A71F' : '#167F00'}`);
     el.setAttribute('aria-checked', String(localStorage.theme === 'dark'));
   }
 
@@ -111,6 +113,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         `../assets/icons/close_icon_${dataTheme === 'dark' ? 'dark' : 'light'}.svg`
       );
     }
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', `${dataTheme === 'dark' ? '#37A71F' : '#167F00'}`);
   }
 
   // set flag

@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#167F00" />
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/modal.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <script src="./scripts/main.js"></script>
     <script src="./scripts/actions.js"></script>
     <title>Marcos Guerrero</title>
@@ -23,9 +24,11 @@
     </noscript>
     <main>
       <header>
-        <!-- <input type="checkbox" id="toggleTheme" /> -->
-        <!-- <label for="toggleTheme" class="slider" tabindex="0"></label> -->
+        <!-- Switch Theme Button -->
         <div class="slider" role="checkbox" aria-checked="false" tabindex="1"></div>
+        <!-- Switch Theme Button end's -->
+        
+        <!-- Change language menu start's -->
         <div class="language-switcher-menu">
           <button aria-haspopup="menu" id="flag-select-button" aria-controls="lang-menu" tabindex="1">
             <img id="flag-selected" />
@@ -40,13 +43,22 @@
             </li>
           </ul>
         </div>
+        <!-- Change language menu end's -->
       </header>
+
+
       <section class="home">
+
+        <!-- Typewritter start's -->
         <h1 class="typing-container">
           <span id="feature-text"></span>
           <span class="caret"></span>
         </h1>
+        <!-- Typewritter end's -->
+
+        <!-- Navbar start's  -->
         <nav class="NavigationMenu">
+          <!-- About Button -->
           <button aria-haspopup="dialog" class="NavButtons" id="NavBtn1" aria-controls="about-modal">about me</button>
           <div class="overlay" id="about-modal" role="dialog" aria-labelledby="NavBtn1">
             <section class="modal about-modal">
@@ -57,6 +69,8 @@
               <article id="about-me"></article>
             </section>
           </div>
+
+          <!-- Tech-Stack Button -->
           <button class="NavButtons" aria-haspopup="dialog" id="NabBtn2" aria-controls="tech-modal">
             technologies and languages
           </button>
@@ -88,6 +102,8 @@
               </article>
             </section>
           </div>
+
+          <!-- Experience Button -->
           <button class="NavButtons" id="NabBtn3" aria-haspopup="exp-modal">experience</button>
           <div class="overlay">
             <section class="modal" id="exp-modal" role="dialog" aria-labelledby="NavBtn3">
@@ -129,20 +145,22 @@
               </article>
             </section>
           </div>
+
+          <!-- Contact Form Button -->
           <button class="NavButtons" id="NabBtn4">contact</button>
           <div class="overlay">
             <section class="modal contact-modal">
               <section class="contact_form" aria-expanded="true">
                 <div class="input_area">
-                  <label for="contact_name" class="message_label" >Your Name</label>
+                  <label for="contact_name" class="message_label">Your Name</label>
                   <input type="text" name="name" id="contact_name" class="contact_input" placeholder="John Doe" />
                 </div>
                 <div class="input_area">
-                  <label for="contact_email" class="message_label" >Email</label>
+                  <label for="contact_email" class="message_label">Email</label>
                   <input type="email" name="email" id="contact_email" class="contact_input" placeholder="example555@gmail.com" />
                 </div>
                 <div class="input_area">
-                  <label for="contact_message" class="message_label" >Why do you contact me?</label>
+                  <label for="contact_message" class="message_label">Why do you contact me?</label>
                   <textarea type="text" name="message" id="contact_message" class="contact_textarea" placeholder="..."></textarea>
                 </div>
                 <button class="send_button">enviar</button>
@@ -160,9 +178,12 @@
               </button>
             </section>
           </div>
+
+          <!-- Download Button -->
           <button class="NavButtons">download cv</button>
           <!-- <a href="./assets/Marcos Guerrero CV.pdf" download="Marcos Guerrero CV" class="NavButtons">download cv</a> -->
         </nav>
+        <!-- Navbar end's -->
       </section>
     </main>
   </body>
