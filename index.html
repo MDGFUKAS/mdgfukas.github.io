@@ -25,11 +25,11 @@
     <main>
       <header>
         <!-- Switch Theme Button -->
-        <div class="slider" role="checkbox" aria-checked="false" tabindex="1"></div>
+        <section class="slider" role="checkbox" aria-checked="false" tabindex="1"></section>
         <!-- Switch Theme Button end's -->
         
         <!-- Change language menu start's -->
-        <div class="language-switcher-menu">
+        <section class="language-switcher-menu">
           <button aria-haspopup="menu" id="flag-select-button" aria-controls="lang-menu" tabindex="1">
             <img id="flag-selected" />
             <p id="lang-selected"></p>
@@ -42,7 +42,7 @@
               <img src="./assets/icons/es_flag.svg" alt="es" draggable="false" /> ES
             </li>
           </ul>
-        </div>
+        </section>
         <!-- Change language menu end's -->
       </header>
 
@@ -60,7 +60,7 @@
         <nav class="NavigationMenu">
           <!-- About Button -->
           <button aria-haspopup="dialog" class="NavButtons" id="NavBtn1" aria-controls="about-modal">about me</button>
-          <div class="overlay" id="about-modal" role="dialog" aria-labelledby="NavBtn1">
+          <section class="overlay" id="about-modal" role="dialog" aria-labelledby="NavBtn1">
             <section class="modal about-modal">
               <button class="close">
                 <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" role="button" />
@@ -68,13 +68,13 @@
               <img src="./assets/images/avatar_light.svg" id="hero" draggable="false" />
               <article id="about-me"></article>
             </section>
-          </div>
+          </section>
 
           <!-- Tech-Stack Button -->
           <button class="NavButtons" aria-haspopup="dialog" id="NabBtn2" aria-controls="tech-modal">
             technologies and languages
           </button>
-          <div class="overlay" id="tech-modal" role="dialog" aria-labelledby="NavBtn2">
+          <section class="overlay" id="tech-modal" role="dialog" aria-labelledby="NavBtn2">
             <section class="modal tech-modal">
               <button class="close">
                 <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
@@ -101,11 +101,11 @@
                 </section>
               </article>
             </section>
-          </div>
+          </section>
 
           <!-- Experience Button -->
           <button class="NavButtons" id="NabBtn3" aria-haspopup="exp-modal">experience</button>
-          <div class="overlay">
+          <section class="overlay">
             <section class="modal" id="exp-modal" role="dialog" aria-labelledby="NavBtn3">
               <button class="close">
                 <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
@@ -144,40 +144,40 @@
                 </figure>
               </article>
             </section>
-          </div>
+          </section>
 
           <!-- Contact Form Button -->
           <button class="NavButtons" id="NabBtn4">contact</button>
-          <div class="overlay">
+          <section class="overlay">
             <section class="modal contact-modal">
               <section class="contact_form" aria-expanded="true">
-                <div class="input_area">
+                <section class="input_area">
                   <label for="contact_name" class="message_label">Your Name</label>
                   <input type="text" name="name" id="contact_name" class="contact_input" placeholder="John Doe" />
-                </div>
-                <div class="input_area">
+                </section>
+                <section class="input_area">
                   <label for="contact_email" class="message_label">Email</label>
                   <input type="email" name="email" id="contact_email" class="contact_input" placeholder="example555@gmail.com" />
-                </div>
-                <div class="input_area">
+                </section>
+                <section class="input_area">
                   <label for="contact_message" class="message_label">Why do you contact me?</label>
                   <textarea type="text" name="message" id="contact_message" class="contact_textarea" placeholder="..."></textarea>
-                </div>
+                </section>
                 <button class="send_button">enviar</button>
                 <!-- <button class="swap_button ws_button" data-message="or write me on whatsapp 👉"></button> -->
               </section>
               <!-- <section class="contact_ws">
-                <div>
+                <section>
                   <label for="ws_contant_message"></label>
-                  <div><textarea type="text" name="ws_message" id="ws_contact_message"></textarea><button></button></div>
-                </div>
+                  <section><textarea type="text" name="ws_message" id="ws_contact_message"></textarea><button></button></section>
+                </section>
                 <button class="swap_button msg_button" data-message="or send me a message 👉"></button>
               </section> -->
               <button class="close">
                 <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
               </button>
             </section>
-          </div>
+          </section>
 
           <!-- Download Button -->
           <button class="NavButtons">download cv</button>
