@@ -1,5 +1,9 @@
 @import url('./root.css');
 
+html {
+  background-color: var(--MAIN_BG);
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -7,6 +11,7 @@ body {
   height: 100vh;
   font-family: "Cabin", sans-serif;
   margin: 0;
+  margin-block-end: auto;
 }
 
 noscript {
@@ -222,8 +227,8 @@ main {
   
   .caret {
     display: inline-block;
-    width: 5px;
-    height: 60px;
+    width: 4px;
+    height: 38px;
     margin-left: 6px;
   }
 
