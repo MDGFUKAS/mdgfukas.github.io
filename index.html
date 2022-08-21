@@ -13,19 +13,13 @@
     <meta property="og:title" content="Marcos Guerrero" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mguerrero-exe.github.io" />
-    <meta
-      property="og:image:url"
-      content="./assets/images/avatar.png"
-    />
+    <meta property="og:image:url" content="./assets/images/avatar.png" />
     <meta
       property="og:description"
       content="Hello! I am Marcos, a self-taught and quite dedicated developer with +2 years of experience"
     />
 
-    <meta
-      property="og:image"
-      content="./assets/images/avatar.png"
-    />
+    <meta property="og:image" content="./assets/images/avatar.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
@@ -39,7 +33,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
     <title>Marcos Guerrero</title>
+  
   </head>
   <body>
     <noscript>
@@ -88,13 +84,13 @@
               <button class="close">
                 <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" role="button" />
               </button>
-              <img src="./assets/images/avatar_light.svg" id="hero" draggable="false" />
+              <img src="./assets/images/avatar_light.svg" id="hero" draggable="false" alt="Avatar" />
               <article id="about-me"></article>
             </section>
           </section>
 
           <!-- Tech-Stack Button -->
-          <button class="NavButtons" aria-haspopup="dialog" id="NabBtn2" aria-controls="tech-modal">
+          <button class="NavButtons" aria-haspopup="dialog" id="NavBtn2" aria-controls="tech-modal">
             technologies and languages
           </button>
           <section class="overlay" id="tech-modal" role="dialog" aria-labelledby="NavBtn2">
@@ -110,15 +106,15 @@
                     <figcaption>JavaScript</figcaption>
                   </figure>
                   <figure class="stack-fig">
-                    <img src="./assets/icons/react_js_native_logo.svg" alt="JavaScript_logo" />
+                    <img src="./assets/icons/react_js_native_logo.svg" alt="React/Native_logo" />
                     <figcaption>React / Native</figcaption>
                   </figure>
                   <figure class="stack-fig">
-                    <img src="./assets/icons/redux_logo.svg" alt="JavaScript_logo" />
+                    <img src="./assets/icons/redux_logo.svg" alt="Redux_logo" />
                     <figcaption>Redux</figcaption>
                   </figure>
                   <figure class="stack-fig">
-                    <img src="./assets/icons/node_js_logo.svg" alt="JavaScript_logo" />
+                    <img src="./assets/icons/node_js_logo.svg" alt="Node.js_logo" />
                     <figcaption>Node.js</figcaption>
                   </figure>
                 </section>
@@ -127,13 +123,13 @@
           </section>
 
           <!-- Experience Button -->
-          <button class="NavButtons" id="NabBtn3" aria-haspopup="exp-modal">experience</button>
+          <button class="NavButtons" id="NavBtn3" aria-haspopup="exp-modal">experience</button>
           <section class="overlay">
             <section class="modal" id="exp-modal" role="dialog" aria-labelledby="NavBtn3">
               <button class="close">
                 <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
               </button>
-              <h2 class="modals-title" id="tech-title"></h2>
+              <h2 class="modals-title" id="tech-title">Experience</h2>
               <article class="experience-content">
                 <figure class="exp-fig">
                   <a href="https://neurons.agency" target="_blank" rel="noopener noreferrer">
@@ -170,9 +166,10 @@
           </section>
 
           <!-- Contact Form Button -->
-          <button class="NavButtons" id="NabBtn4">contact</button>
+          <button class="NavButtons" id="NavBtn4">contact</button>
           <section class="overlay">
             <section class="modal contact-modal">
+              <!-- Contact Form -->
               <section class="contact_form" aria-expanded="true">
                 <section class="input_area">
                   <label for="contact_name" class="message_label">Your Name</label>
@@ -184,18 +181,22 @@
                 </section>
                 <section class="input_area">
                   <label for="contact_message" class="message_label">Why do you contact me?</label>
-                  <textarea type="text" name="message" id="contact_message" class="contact_textarea" placeholder="..."></textarea>
+                  <textarea name="message" id="contact_message" class="contact_textarea" placeholder="..."></textarea>
                 </section>
                 <button class="send_button">enviar</button>
-                <!-- <button class="swap_button ws_button" data-message="or write me on whatsapp 👉"></button> -->
               </section>
-              <!-- <section class="contact_ws">
-                <section>
-                  <label for="ws_contant_message"></label>
-                  <section><textarea type="text" name="ws_message" id="ws_contact_message"></textarea><button></button></section>
+              <button class="swap_button ws_button" data-message="or write me on whatsapp 👉"></button>
+
+              <!-- Whatsapp message form -->
+              <section class="contact_ws">
+                <h2 class="modal_title" id="ws_title_msg">Write your message</h2>
+                <!-- <label for="ws_contant_message"></label> -->
+                <section class="ws_input_container">
+                  <textarea name="ws_message" id="ws_contact_message" rows="1" placeholder="Tell me anything" ></textarea>
+                  <button class="send_ws_button"></button>
                 </section>
-                <button class="swap_button msg_button" data-message="or send me a message 👉"></button>
-              </section> -->
+              </section>
+              <button class="swap_button msg_button" data-message="or send me a message 👉"></button>
               <button class="close">
                 <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" />
               </button>
@@ -203,11 +204,38 @@
           </section>
 
           <!-- Download Button -->
-          <button class="NavButtons">download cv</button>
-          <!-- <a href="./assets/Marcos Guerrero CV.pdf" download="Marcos Guerrero CV" class="NavButtons">download cv</a> -->
+          <button class="NavButtons" id="NavBtn5">download cv</button>
+          <section class="overlay" id="download-modal" role="dialog" aria-labelledby="NavBtn5">
+            <section class="modal download-modal">
+              <h2 class="modals-title" id="download-title">Download CV</h2>
+              <section class="download_btns_container">
+                <button class="download_button">Download (ES)</button>
+                <button class="download_button">Download (EN)</button>
+              </section>
+              <button class="close">
+                <img src="./assets/icons/close_icon_light.svg" alt="close" draggable="false" role="button" />
+              </button>
+            </section>
+          </section>
         </nav>
         <!-- Navbar end's -->
       </section>
+
+      <footer>
+        <h2 id="footer_title">My Networks</h2>
+        <section class="footer_btns">
+          <figure>
+            <a href="https://www.linkedin.com/in/marcosguerrerof/" rel="noopener noreferrer" target="_blank">
+              <img src="./assets/icons/linkedin_light.svg" class="networks_img" alt="LinkedIn" />
+            </a>
+          </figure>
+          <figure>
+            <a href="https://www.github.com/mguerrero-exe" rel="noopener noreferrer" target="_blank">
+              <img src="./assets/icons/github_light.svg" class="networks_img" alt="GitHub" />
+            </a>
+          </figure>
+        </section>
+      </footer>
     </main>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/actions.js"></script>

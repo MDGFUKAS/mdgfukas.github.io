@@ -46,6 +46,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .close img {
@@ -287,7 +288,7 @@
   display: flex;
 }
 
-.send_button {
+.send_button, .download_button {
   -webkit-appearance: none;
   appearance: none;
   border: 1px solid var(--MAIN_GREEN);
@@ -310,15 +311,16 @@
   font-size: 14px;
   text-decoration: none;
   min-height: 50px;
+  cursor: pointer;
 }
 
-.send_button:hover {
+.send_button:hover, .download_button:hover {
   margin-top: -8px;
   margin-bottom: 18px;
   background-color: var(--MAIN_GREEN_TRANS);
 }
 
-.send_button:focus {
+.send_button:focus, .download_button:focus {
   background-color: var(--MAIN_GREEN_TRANS);
   animation: bump .3s linear;
 }
@@ -333,6 +335,14 @@
   }
 }
 
+.contact_form[aria-expanded="true"] + .ws_button {
+  display: block;
+}
+
+.contact_ws[aria-expanded="true"] + .msg_button {
+  display: block;
+}
+
 .swap_button {
   position: absolute;
   bottom: 0;
@@ -344,6 +354,10 @@
   background-clip: padding-box;
   background-color: #0000;
   transition: all .3s;
+  z-index: 15;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: none;
 }
 
 .swap_button::after {
@@ -394,11 +408,97 @@
   margin-right: 80px;
 }
 
+.contact_ws {
+  justify-content: center;
+  color: var(--MAIN_BLACK);
+}
+
+.ws_input_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  max-width: 500px;
+}
+
+#ws_contact_message {
+  flex: 1;
+  height: auto;
+  min-height: 44px;
+  overflow: auto;
+  scrollbar-width: none;
+  max-height: 250px;
+}
+#ws_contact_message::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.send_ws_button {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  background-color: var(--MAIN_GREEN);
+  border: none;
+  border-radius: 25px;
+  margin-left: 10px;
+  background-image: url('../assets/icons/send_icon.svg');
+  background-repeat: no-repeat;
+  background-position: 15px 12px;
+  background-size: 28px;
+  cursor: pointer;
+}
+
+.download-modal {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.download_btns_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 500px) {
 
   .modal {
-    width: calc(100% - 20px);
-    height: calc(100vh - 100px);
+    width: 100%;
+    height: 100vmax;
+    border: none;
   }
 
+  .send_button, .download_button {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid var(--MAIN_GREEN);
+    color: var(--MAIN_BLACK);
+    border-radius: 5px;
+    min-width: 150px;
+    animation: none;
+  }
+  
+  .send_button:hover, .download_button:hover, .send_button:focus, .download_button:focus {
+    margin: 5px;
+    animation: unset;
+  }
+
+}
+
+@media screen and (max-height: 500px) {
+
+  .contact_form[aria-expanded="true"] + .ws_button {
+    display: none;
+  }
+  
+  .contact_ws[aria-expanded="true"] + .msg_button {
+    display: none;
+  }
 }
